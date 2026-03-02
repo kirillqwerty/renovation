@@ -1,7 +1,7 @@
 {
   "name": "renovation",
   "private": true,
-  "homepage": "https://kirillqwerty.github.io/renovation",
+  "homepage": "https://kirillqwerty.github.io/renovation/",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
