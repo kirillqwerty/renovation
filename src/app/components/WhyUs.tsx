@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Sparkles, Clock, FileText, CheckCircle } from "lucide-react";
+import { getImageURL } from "../../utils/image-url";
 // import interiorImage from "";
 
 const features = [
@@ -101,7 +102,7 @@ export function WhyUs() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="src/assets/header-photo.png"
+                src={getImageURL("header-photo.png")}
                 alt="Мы превращаем типовое жилье в эталон стиля"
                 className="w-full h-auto"
               />
