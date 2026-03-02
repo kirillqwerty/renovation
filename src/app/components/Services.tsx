@@ -118,7 +118,7 @@ export function Services() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="./renovation/src/assets/before-after.png"
+                  src="src/assets/before-after.png"
                   alt="Пример качественного преображения пространства"
                   className="w-full h-auto"
                 />
@@ -150,7 +150,7 @@ export function Services() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="./renovation/src/assets/invest-ren.png"
+                  src="src/assets/invest-ren.png"
                   alt="Гармония и стиль в каждой детали"
                   className="w-full h-auto"
                 />

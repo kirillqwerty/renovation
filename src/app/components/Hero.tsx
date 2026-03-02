@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#F5F1ED] to-[#E8E4DF] pt-20 overflow-hidden">
       {/* Background image */}
       <img
-        src="./renovation/src/assets/header-photo.png"
+        src="src/assets/header-photo.png"
         className="absolute inset-0 w-full h-full object-cover opacity-100"
         alt=""
       />

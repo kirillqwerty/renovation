@@ -101,7 +101,7 @@ export function WhyUs() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="./renovation/src/assets/header-photo.png"
+                src="src/assets/header-photo.png"
                 alt="Мы превращаем типовое жилье в эталон стиля"
                 className="w-full h-auto"
               />
