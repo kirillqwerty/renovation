@@ -220,14 +220,14 @@ export function Services() {
                   </div>
                 </div>
               </div>
-              {/* 
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-[#8B7355] text-white rounded-full hover:bg-[#7A6348] transition-colors shadow-lg"
               >
                 Заказать консультацию
-              </motion.button> */}
+              </motion.button>
             </div>
           </div>
         </motion.div>

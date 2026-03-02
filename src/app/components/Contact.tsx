@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Send } from "lucide-react";
+import axios from "axios";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -11,11 +12,38 @@ export function Contact() {
     message: "",
   });
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   // Здесь будет обработка отправки формы
-  //   alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
-  // };
+  const handleSubmit = (e: React.FormEvent) => {
+    const sendMessage = async (chatId: string | number, botToken: string) => {
+      try {
+        const response = await axios.post(
+          `https://api.telegram.org/bot${botToken}/sendMessage`,
+          {
+            chat_id: chatId,
+            text: generateText(),
+          },
+        );
+
+        console.log("Message sent:", response.data);
+      } catch (error) {
+        console.error("Error sending message:", error);
+      }
+    };
+
+    const generateText = function () {
+      return `ЗАЯВКА\nКлиент: ${formData.name}\nТелефон: ${formData.phone}\n${formData.email ? "Email: " + formData.email + "\n" : ""}Тип услуги: ${formData.service}\n${formData.message ? "Примечание: " + formData.message : ""}`;
+    };
+
+    sendMessage(
+      7870088819,
+      "8657773985:AAE4cyFVpzajsreazkK-V-SPtvDTvoYyVPk",
+    ).then();
+
+    console.log(formData);
+
+    e.preventDefault();
+    // Здесь будет обработка отправки формы
+    alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -70,7 +98,9 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Адрес</h3>
-                <p className="text-gray-600">г. Минск, ул. Октябрьская, д. 10</p>
+                <p className="text-gray-600">
+                  г. Минск, ул. Октябрьская, д. 10
+                </p>
               </div>
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Режим работы</h3>
@@ -81,7 +111,7 @@ export function Contact() {
           </motion.div>
 
           {/* Right side - Form */}
-          {/* <motion.div
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -93,7 +123,10 @@ export function Contact() {
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm text-gray-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm text-gray-700 mb-2"
+                >
                   Ваше имя *
                 </label>
                 <input
@@ -109,7 +142,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm text-gray-700 mb-2">
+                <label
+                  htmlFor="phone"
+                  className="block text-sm text-gray-700 mb-2"
+                >
                   Телефон *
                 </label>
                 <input
@@ -125,7 +161,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm text-gray-700 mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -140,7 +179,10 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm text-gray-700 mb-2">
+                <label
+                  htmlFor="service"
+                  className="block text-sm text-gray-700 mb-2"
+                >
                   Тип услуги *
                 </label>
                 <select
@@ -151,14 +193,19 @@ export function Contact() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A574] transition-all"
                 >
-                  <option value="investment">Инвестиционный ремонт</option>
-                  <option value="personal">Ремонт для жизни</option>
-                  <option value="consultation">Консультация</option>
+                  <option value="Инвестиционный ремонт">
+                    Инвестиционный ремонт
+                  </option>
+                  <option value="Ремонт для жизни">Ремонт для жизни</option>
+                  <option value="Консультация">Консультация</option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm text-gray-700 mb-2"
+                >
                   Сообщение
                 </label>
                 <textarea
@@ -186,7 +233,7 @@ export function Contact() {
                 Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
               </p>
             </form>
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </section>

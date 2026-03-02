@@ -17,10 +17,10 @@ export function Footer() {
               <Logo className="w-10 h-10" />
               <div className="flex flex-col">
                 <span className="text-xl font-semibold leading-tight">
-                  Недвижимость
+                  Ремонт недвижимости
                 </span>
                 <span className="text-xs text-[#D4A574] font-medium">
-                  Риэлторские услуги & Ремонт
+                  сопровождение сделки профессиональным риэлтером
                 </span>
               </div>
             </motion.a>
