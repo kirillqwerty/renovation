@@ -42,7 +42,7 @@ export function Contact() {
     };
 
     const generateText = function () {
-      return `ЗАЯВКА\nКлиент: ${formData.name}\nТелефон: ${formData.phone}\n${formData.email ? "Email: " + formData.email + "\n" : ""}Тип услуги: ${formData.service}\n${formData.message ? "Примечание: " + formData.message : ""}`;
+      return `ЗАЯВКА\nКлиент: ${formData.name}\nТелефон: +375${formData.phone}\n${formData.email ? "Email: " + formData.email + "\n" : ""}Тип услуги: ${formData.service}\n${formData.message ? "Примечание: " + formData.message : ""}`;
     };
 
     sendMessage(
@@ -152,16 +152,24 @@ export function Contact() {
                 >
                   Телефон *
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  required
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A574] transition-all"
-                  placeholder="+375 (44) 123-45-67"
-                />
+                <div className="flex">
+                  {/* Префикс */}
+                  <span className="flex items-center px-4 bg-gray-100 border border-r-0 border-gray-200 rounded-l-lg text-gray-700">
+                    +375
+                  </span>
+
+                  {/* Ввод номера */}
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-[#D4A574] transition-all"
+                    placeholder="(29) 123-45-67"
+                  />
+                </div>
               </div>
 
               <div>
