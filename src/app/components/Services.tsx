@@ -16,11 +16,24 @@ import { getImageURL } from "../../utils/image-url";
 
 export function Services() {
   const handleOrderClick = (service: string) => {
-    window.dispatchEvent(new CustomEvent("selectService", { detail: service }));
+    const isMobile = window.innerWidth < 768;
 
-    document.getElementById("contact")?.scrollIntoView({
+    const target = isMobile
+      ? document.getElementById("contact-form")
+      : document.getElementById("contact");
+
+    if (!target) return;
+
+    const offset = isMobile ? 100 : 60;
+
+    const y = target.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: y,
       behavior: "smooth",
     });
+
+    window.dispatchEvent(new CustomEvent("selectService", { detail: service }));
   };
   return (
     <section id="services" className="py-24 bg-white">
