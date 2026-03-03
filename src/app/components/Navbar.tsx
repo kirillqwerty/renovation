@@ -45,12 +45,6 @@ export function Navbar() {
             >
               Процесс
             </a>
-            {/* <a
-              href="#portfolio"
-              className="text-gray-600 hover:text-[#D4A574] transition-colors"
-            >
-              Портфолио
-            </a> */}
             <a
               href="#testimonials"
               className="text-gray-600 hover:text-[#D4A574] transition-colors"
@@ -64,15 +58,6 @@ export function Navbar() {
               Контакты
             </a>
           </div>
-
-          {/* Contact Button */}
-          {/* <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:block px-6 py-2 bg-[#D4A574] text-white rounded-full hover:bg-[#C39563] transition-colors"
-          >
-            Заказать звонок
-          </motion.button> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -104,12 +89,6 @@ export function Navbar() {
               >
                 Процесс
               </a>
-              {/* <a
-                href="#portfolio"
-                className="text-gray-600 hover:text-[#D4A574] transition-colors"
-              >
-                Портфолио
-              </a> */}
               <a
                 href="#testimonials"
                 className="text-gray-600 hover:text-[#D4A574] transition-colors"
@@ -122,9 +101,6 @@ export function Navbar() {
               >
                 Контакты
               </a>
-              {/* <button className="px-6 py-2 bg-[#D4A574] text-white rounded-full hover:bg-[#C39563] transition-colors text-left">
-                Заказать звонок
-              </button> */}
             </div>
           </motion.div>
         )}

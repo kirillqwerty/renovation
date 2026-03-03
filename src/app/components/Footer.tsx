@@ -1,7 +1,5 @@
 import { motion } from "motion/react";
 import {
-  Facebook,
-  Instagram,
   Mail,
   Phone,
   MapPin,
@@ -35,20 +33,6 @@ export function Footer() {
             <p className="text-gray-400 leading-relaxed mb-4">
               Профессиональный ремонт квартир под продажу и для жизни
             </p>
-            {/* <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4A574] transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4A574] transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-            </div> */}
           </div>
 
           {/* Services */}
@@ -82,14 +66,6 @@ export function Footer() {
                   О нас
                 </a>
               </li>
-              {/* <li>
-                <a
-                  href="#portfolio"
-                  className="hover:text-[#D4A574] transition-colors"
-                >
-                  Портфолио
-                </a>
-              </li> */}
               <li>
                 <a
                   href="#testimonials"
@@ -150,14 +126,6 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
             <p>© 2026 Ремонт недвижимости. Все права защищены.</p>
-            {/* <div className="flex gap-6">
-              <a href="#" className="hover:text-[#D4A574] transition-colors">
-                Политика конфиденциальности
-              </a>
-              <a href="#" className="hover:text-[#D4A574] transition-colors">
-                Условия использования
-              </a>
-            </div> */}
           </div>
         </div>
       </div>
