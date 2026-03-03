@@ -15,6 +15,13 @@ import {
 import { getImageURL } from "../../utils/image-url";
 
 export function Services() {
+  const handleOrderClick = (service: string) => {
+    window.dispatchEvent(new CustomEvent("selectService", { detail: service }));
+
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -104,13 +111,14 @@ export function Services() {
                 </div>
               </div>
 
-              {/* <motion.button
+              <motion.button
+                onClick={() => handleOrderClick("Инвестиционный ремонт")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#D4A574] text-white rounded-full hover:bg-[#C39563] transition-colors shadow-lg"
+                className="block mt-6 mx-auto lg:mx-0 px-8 py-4 bg-[#8B7355] text-white rounded-sm hover:bg-[#7A6348] transition-colors shadow-lg"
               >
-                Узнать стоимость
-              </motion.button> */}
+                Заказать ремонт под продажу
+              </motion.button>
             </div>
 
             <motion.div
@@ -143,6 +151,7 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-24"
         >
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -222,11 +231,12 @@ export function Services() {
               </div>
 
               <motion.button
+                onClick={() => handleOrderClick("Ремонт для жизни")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-[#8B7355] text-white rounded-full hover:bg-[#7A6348] transition-colors shadow-lg"
+                className="block mt-6 mx-auto lg:mx-0 px-8 py-4 bg-[#8B7355] text-white rounded-sm hover:bg-[#7A6348] transition-colors shadow-lg"
               >
-                Заказать консультацию
+                Заказать ремонт для жизни
               </motion.button>
             </div>
           </div>
@@ -304,6 +314,14 @@ export function Services() {
                     </p>
                   </div>
                 </div>
+                <motion.button
+                  onClick={() => handleOrderClick("Консультация")}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="block mt-6 mx-auto lg:mx-0 px-8 py-4 bg-[#8B7355] text-white rounded-sm hover:bg-[#7A6348] transition-colors shadow-lg"
+                >
+                  Заказать консультацию
+                </motion.button>
               </div>
             </div>
 

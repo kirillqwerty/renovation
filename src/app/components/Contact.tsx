@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Send } from "lucide-react";
 import axios from "axios";
 
 export function Contact() {
+  useEffect(() => {
+    const handler = (event: any) => {
+      setFormData((prev) => ({
+        ...prev,
+        service: event.detail,
+      }));
+    };
+
+    window.addEventListener("selectService", handler);
+
+    return () => {
+      window.removeEventListener("selectService", handler);
+    };
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    service: "investment",
+    service: "",
     message: "",
   });
 
@@ -22,8 +36,6 @@ export function Contact() {
             text: generateText(),
           },
         );
-
-        console.log("Message sent:", response.data);
       } catch (error) {
         console.error("Error sending message:", error);
       }
@@ -34,12 +46,9 @@ export function Contact() {
     };
 
     sendMessage(
-      7870088819,
+      1342869650,
       "8657773985:AAE4cyFVpzajsreazkK-V-SPtvDTvoYyVPk",
     ).then();
-
-    console.log(formData);
-
     e.preventDefault();
     // Здесь будет обработка отправки формы
     alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
@@ -72,10 +81,6 @@ export function Contact() {
               <br />
               <span className="text-[#D4A574]">проект сегодня</span>
             </h2>
-            {/* <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Оставьте заявку, и мы свяжемся с вами в течение 30 минут для
-              бесплатной консультации и расчета стоимости.
-            </p> */}
 
             <div className="space-y-6">
               <div>
@@ -87,15 +92,15 @@ export function Contact() {
                   +375 (29) 152-13-80
                 </a>
               </div>
-              {/* <div>
+              <div>
                 <h3 className="font-medium text-gray-800 mb-2">Email</h3>
                 <a
                   href="mailto:info@renovation.ru"
                   className="text-lg text-[#D4A574] hover:underline"
                 >
-                  info@renovation.ru
+                  stroymminsk@gmail.com
                 </a>
-              </div> */}
+              </div>
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Адрес</h3>
                 <p className="text-gray-600">г. Минск, ул. Ванеева 26</p>
@@ -228,7 +233,15 @@ export function Contact() {
               </motion.button>
 
               <p className="text-xs text-gray-500 text-center">
-                Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+                Нажимая кнопку, вы соглашаетесь{" "}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://pravo.by/novosti/novosti-pravo-by/2022/november/72150/"
+                  className="text-[#D4A574] hover:text-[#C39563] underline transition-colors"
+                >
+                  с политикой конфиденциальности
+                </a>
               </p>
             </form>
           </motion.div>

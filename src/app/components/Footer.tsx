@@ -125,10 +125,10 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-[#D4A574] flex-shrink-0 mt-0.5" />
                 <a
-                  href="mailto:info@renovation.ru"
+                  href="mailto:stroymminsk@gmail.com"
                   className="hover:text-[#D4A574] transition-colors"
                 >
-                  info@renovation.ru
+                  stroymminsk@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
