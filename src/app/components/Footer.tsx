@@ -1,5 +1,13 @@
 import { motion } from "motion/react";
-import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
+  Briefcase,
+  BadgeCheck,
+} from "lucide-react";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -27,7 +35,7 @@ export function Footer() {
             <p className="text-gray-400 leading-relaxed mb-4">
               Профессиональный ремонт квартир под продажу и для жизни
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <a
                 href="#"
                 className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#D4A574] transition-colors"
@@ -40,7 +48,7 @@ export function Footer() {
               >
                 <Facebook className="w-5 h-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
@@ -111,7 +119,7 @@ export function Footer() {
                   href="tel:+79991234567"
                   className="hover:text-[#D4A574] transition-colors"
                 >
-                  +375 (44) 123-45-67
+                  +375(29)152-13-80
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -125,7 +133,15 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#D4A574] flex-shrink-0 mt-0.5" />
-                <span>г. Минск, ул. Октябрьская, д. 10</span>
+                <span>г. Минск, ул. Ванеева 26</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Briefcase className="w-5 h-5 text-[#D4A574] flex-shrink-0 mt-0.5" />
+                <span>ИП Маджуга Михаил Владимирович</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <BadgeCheck className="w-5 h-5 text-[#D4A574] flex-shrink-0 mt-0.5" />
+                <span>УНП - 191099353</span>
               </li>
             </ul>
           </div>
@@ -133,15 +149,15 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-            <p>© 2026 Renovation. Все права защищены.</p>
-            <div className="flex gap-6">
+            <p>© 2026 Ремонт недвижимости. Все права защищены.</p>
+            {/* <div className="flex gap-6">
               <a href="#" className="hover:text-[#D4A574] transition-colors">
                 Политика конфиденциальности
               </a>
               <a href="#" className="hover:text-[#D4A574] transition-colors">
                 Условия использования
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,6 +1,4 @@
 import { motion } from "motion/react";
-import { TrendingUp, ArrowRight } from "lucide-react";
-import HEADER from "/src/assets/header-photo.png";
 import { getImageURL } from "../../utils/image-url";
 export function Hero() {
   return (

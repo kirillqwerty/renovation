@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Star } from "lucide-react";
+import { getImageURL } from "../../utils/image-url";
 
 const testimonials = [
   {
@@ -7,18 +8,21 @@ const testimonials = [
     role: "Инвестиционный ремонт",
     text: "Невероятный результат! Квартиру продали на 25% дороже рыночной цены. Ремонт окупился полностью, и мы остались в большом плюсе. Спасибо команде!",
     rating: 5,
+    photo: "woman-review-1.png",
   },
   {
     name: "Дмитрий Соколов",
     role: "Ремонт квартиры",
     text: "Делали ремонт для себя. Качество работы на высоте, все материалы согласовывали, сроки соблюдены. Теперь живем в квартире мечты!",
     rating: 5,
+    photo: "man-review-1.png",
   },
   {
     name: "Екатерина Волкова",
     role: "Инвестиционный ремонт",
     text: "Отличная работа и профессиональный подход. Ремонт был выполнен качественно и в срок, благодаря чему квартиру удалось продать значительно выгоднее.",
     rating: 5,
+    photo: "woman-review-2.png",
   },
 ];
 
@@ -68,11 +72,21 @@ export function Testimonials() {
               </p>
 
               {/* Author */}
-              <div>
-                <div className="font-medium text-gray-800">
-                  {testimonial.name}
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="font-medium text-gray-800">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {testimonial.role}
+                  </div>
                 </div>
-                <div className="text-sm text-gray-500">{testimonial.role}</div>
+
+                <img
+                  src={getImageURL(testimonial.photo)}
+                  className="w-14 h-14 rounded-full object-cover ml-4"
+                  alt={testimonial.name}
+                />
               </div>
             </motion.div>
           ))}

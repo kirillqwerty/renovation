@@ -84,10 +84,10 @@ export function Contact() {
                   href="tel:+79991234567"
                   className="text-lg text-[#D4A574] hover:underline"
                 >
-                  +375 (44) 123-45-67
+                  +375 (29) 152-13-80
                 </a>
               </div>
-              <div>
+              {/* <div>
                 <h3 className="font-medium text-gray-800 mb-2">Email</h3>
                 <a
                   href="mailto:info@renovation.ru"
@@ -95,12 +95,10 @@ export function Contact() {
                 >
                   info@renovation.ru
                 </a>
-              </div>
+              </div> */}
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Адрес</h3>
-                <p className="text-gray-600">
-                  г. Минск, ул. Октябрьская, д. 10
-                </p>
+                <p className="text-gray-600">г. Минск, ул. Ванеева 26</p>
               </div>
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Режим работы</h3>
@@ -156,7 +154,7 @@ export function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D4A574] transition-all"
-                  placeholder="+7 (999) 123-45-67"
+                  placeholder="+375 (44) 123-45-67"
                 />
               </div>
 
