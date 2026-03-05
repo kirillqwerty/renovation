@@ -95,7 +95,7 @@ export function Contact() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Email</h3>
                 <a
-                  href="mailto:info@renovation.ru"
+                  href="mailto:stroymminsk@gmail.com"
                   className="text-lg text-[#D4A574] hover:underline"
                 >
                   stroymminsk@gmail.com
